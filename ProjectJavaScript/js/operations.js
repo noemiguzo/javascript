@@ -1,22 +1,31 @@
-
-function operations() {
-	if(arguments.length>0){
-		var suma=DoSum(arguments);
-		console.log('The sum is : '+ suma);
-		console.log('The average is ' + (suma/arguments.length));
-		console.log('The Max is: '+ GetMax(arguments));
-		console.log ('The Min is: ' + GetMin(arguments));
+	/**
+	 * function that given N arguments (numbers), calculates:total sum,average, the Max number, and the Min number.
+	 * @author Noemi.Guzman@jalasoft.com
+	 */
+	function operations() {
+		if(arguments.length>0){
+			var suma=DoSum(arguments);
+			console.log('The Total sum is : '+ suma);
+			console.log('The Average is ' + (suma/arguments.length));
+			console.log('The Max is: '+ GetMax(arguments));
+			console.log('The Min is: ' + GetMin(arguments));
+			
+		}
+		else
+		{
+			console.log('Please enter the numbers.');
+		}
 		
-	}
-	else
-	{
-		console.log('Please enter the number.');
 	}
 	
-}
-function DoSum(arg){
-	if(arg.length==1)
-		
+	/**
+	 * Sum of all items of an array.
+	 * @param {arg} the array to sum.
+	 * @return	{float} sum of items of the array.
+	 */
+
+	var DoSum=function(arg){
+	if(arg.length==1)		
 	{
 		
 		return arg[0];
@@ -26,7 +35,11 @@ function DoSum(arg){
 			return arg[0] + DoSum(arraycl(arg))
 		}
 	}
-	
+	/**
+	 * Remove the first items of an array.
+	 * @param {a} the array to remove item[0].
+	 * @return	{array} the 'a' array without the first item.
+	 */
 	var arraycl = function (a) {
 		var clra=[];
 		for (var i = 0; i < a.length-1; i++) {
@@ -34,7 +47,13 @@ function DoSum(arg){
 		}
 		return clra;
 	};
-var  GetMax=function(argMax, current){
+	/**
+	 * Function to get the maximum number
+	 * @param {argMax} the array.
+	 * @param {current} the current maximum.
+	 * @return	{float} maximum of the array.	 
+	 */
+	var  GetMax=function(argMax, current){
 	if (current== undefined){
 		current=argMax[0];
 	}
@@ -43,11 +62,16 @@ var  GetMax=function(argMax, current){
 	}	
 	else	{
 		if (current>argMax[0]){ return GetMax(arraycl(argMax),current) ;}
-		else {return GetMax(arraycl(argMax),argMax[0]);}
-		
+		else {return GetMax(arraycl(argMax),argMax[0]);}		
+		}
 	}
-}
-var GetMin=function(argMin,currentMin){
+	/**
+	 * Function to get the minimum number
+	 * @param {argMax} the array.
+	 * @param {current} the current minimum.	
+	 * @return	{float} minimum of the array.	
+	 */
+	var GetMin=function(argMin,currentMin){
 	if (currentMin== undefined){
 		currentMin=argMin[0];
 	}
