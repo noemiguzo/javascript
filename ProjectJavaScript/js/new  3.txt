@@ -1,0 +1,204 @@
+					<Child Name="SQLdmCWFInstaller" Key="{DA2DB139-BEB7-456B-B97D-15A8533BA21F}" ParallelWalk="True">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value PropertyType="0" Value="SQLdmCWFInstaller" Type="5" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="SDM_CWFSQLdmInstallWizard" Key="{295CF1C6-06B1-4F8D-9798-9DFD94E2FFE3}" ParallelWalk="True">
+								<Properties>
+									<Property Name="NativeClrObject.Name">
+										<Value PropertyType="0" Value="SQLdmInstallWizard" Type="5" />
+									</Property>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="WinFormsObject(&quot;SQLdmInstallWizard&quot;)" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="installWizard" Key="{B34A299B-6FAF-4962-94C1-FE786B4BFEE6}" ParallelWalk="True">
+										<Properties>
+											<Property Name="NativeClrObject.Name">
+												<Value PropertyType="0" Value="installWizard" Type="5" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="welcomePage" Key="{C4EA6126-D92B-411C-B078-BC90D299F3F1}" ParallelWalk="True">
+												<Properties>
+													<Property Name="NativeClrObject.Name">
+														<Value PropertyType="0" Value="welcomePage" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="lbl_WelcomeToUpgradeWizardSQLdm" Key="{D395BF1F-D2B2-45B0-877D-D57540286DCC}" ParallelWalk="True">
+														<Properties>
+															<Property Name="NativeClrObject.Name">
+																<Value PropertyType="0" Value="titleText" Type="5" />
+															</Property>
+															<Property Name="Name">
+																<Value PropertyType="0" Value="WinFormsObject(&quot;titleText&quot;)" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+													<Child Name="lbl_SQLdmUpgradeWizardMsg" Key="{EA37D5AC-07EF-48E0-A54C-215A6A541B1D}" ParallelWalk="True">
+														<Properties>
+															<Property Name="NativeClrObject.Name">
+																<Value PropertyType="0" Value="descriptionText" Type="5" />
+															</Property>
+															<Property Name="Name">
+																<Value PropertyType="0" Value="WinFormsObject(&quot;descriptionText&quot;)" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+											<Child Name="registerPage" Key="{8BB1A03D-FA2B-49C5-B2D2-8F2B1CD5157F}" ParallelWalk="True">
+												<Properties>
+													<Property Name="NativeClrObject.Name">
+														<Value PropertyType="0" Value="registerPage" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="lbl_selectRegistrationOption" Key="{023CF269-107E-43DD-A501-A13779593AE8}" ParallelWalk="True">
+														<Properties>
+															<Property Name="NativeClrObject.Name">
+																<Value PropertyType="0" Value="titleText" Type="5" />
+															</Property>
+															<Property Name="Name">
+																<Value PropertyType="0" Value="WinFormsObject(&quot;titleText&quot;)" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+													<Child Name="groupBoxRegisterCWF" Key="{813E10BB-D124-4024-A2DE-7919E8091FE8}" ParallelWalk="True">
+														<Properties>
+															<Property Name="NativeClrObject.Name">
+																<Value PropertyType="0" Value="groupBoxRegisterCWF" Type="5" />
+															</Property>
+														</Properties>
+														<Children>
+															<Child Name="rbt_InstallIderaDashbrdOnLocal" Key="{0159EC53-AC74-4505-BF0F-FC41A262F290}" ParallelWalk="True">
+																<Properties>
+																	<Property Name="NativeClrObject.Name">
+																		<Value PropertyType="0" Value="radioButtonLocal" Type="5" />
+																	</Property>
+																</Properties>
+															</Child>
+															<Child Name="groupBoxRemoteValues" Key="{E3222E6F-20FB-42BC-9660-E01E24AAE13D}" ParallelWalk="True">
+																<Properties>
+																	<Property Name="NativeClrObject.Name">
+																		<Value PropertyType="0" Value="groupBoxRemoteValues" Type="5" />
+																	</Property>
+																</Properties>
+																<Children>
+																	<Child Name="txt_HostName" Key="{2DF829E4-1431-423C-B217-1361B508185A}" ParallelWalk="True">
+																		<Properties>
+																			<Property Name="NativeClrObject.Name">
+																				<Value PropertyType="0" Value="textBoxHostName" Type="5" />
+																			</Property>
+																			<Property Name="Name">
+																				<Value PropertyType="0" Value="WinFormsObject(&quot;textBoxHostName&quot;)" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																	<Child Name="txt_Port" Key="{33764576-85F1-4789-BA7C-EADF0EAD7064}" ParallelWalk="True">
+																		<Properties>
+																			<Property Name="NativeClrObject.Name">
+																				<Value PropertyType="0" Value="textBoxPort" Type="5" />
+																			</Property>
+																			<Property Name="Name">
+																				<Value PropertyType="0" Value="WinFormsObject(&quot;textBoxPort&quot;)" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																	<Child Name="txt_ServiceAccount" Key="{21CFF5D2-90B1-4ECC-B03D-11F51A5F7CE8}" ParallelWalk="True">
+																		<Properties>
+																			<Property Name="NativeClrObject.Name">
+																				<Value PropertyType="0" Value="textBoxServiceAccount" Type="5" />
+																			</Property>
+																			<Property Name="Name">
+																				<Value PropertyType="0" Value="WinFormsObject(&quot;textBoxServiceAccount&quot;)" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																	<Child Name="txt_ServiceAccountPassword" Key="{E690D8D7-F3F6-4909-A0AB-87A51B96809E}" ParallelWalk="True">
+																		<Properties>
+																			<Property Name="NativeClrObject.Name">
+																				<Value PropertyType="0" Value="textBoxPassword" Type="5" />
+																			</Property>
+																			<Property Name="Name">
+																				<Value PropertyType="0" Value="WinFormsObject(&quot;textBoxPassword&quot;)" Type="5" />
+																			</Property>
+																		</Properties>
+																	</Child>
+																</Children>
+															</Child>
+														</Children>
+													</Child>
+												</Children>
+											</Child>
+											<Child Name="finishPage" Key="{14715786-F850-4768-BE82-0407CD31F90F}" ParallelWalk="True">
+												<Properties>
+													<Property Name="NativeClrObject.Name">
+														<Value PropertyType="0" Value="finishPage" Type="5" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="lbl_CompleteSQLdmSetupWizard" Key="{114F5F12-5122-4A29-B429-51183C8C2D87}" ParallelWalk="True">
+														<Properties>
+															<Property Name="NativeClrObject.Name">
+																<Value PropertyType="0" Value="titleText" Type="5" />
+															</Property>
+															<Property Name="Name">
+																<Value PropertyType="0" Value="WinFormsObject(&quot;titleText&quot;)" Type="5" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+									<Child Name="btn_Next" Key="{AD9841C9-E3C9-4EA2-A612-759BCE2C9247}" ParallelWalk="True">
+										<Properties>
+											<Property Name="NativeClrObject.Name">
+												<Value PropertyType="0" Value="nextBtn" Type="5" />
+											</Property>
+											<Property Name="Name">
+												<Value PropertyType="0" Value="WinFormsObject(&quot;nextBtn&quot;)" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+									<Child Name="btn_Cancel" Key="{8DFDB1FF-9CF5-44ED-BA07-99642EC4AEB0}" ParallelWalk="True">
+										<Properties>
+											<Property Name="NativeClrObject.Name">
+												<Value PropertyType="0" Value="cancelBtn" Type="5" />
+											</Property>
+											<Property Name="Name">
+												<Value PropertyType="0" Value="WinFormsObject(&quot;cancelBtn&quot;)" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="dlg_IderaDashboardInstallValid" Key="{19066BE0-A2A2-4A35-BA6E-1DC89E17C10C}" ParallelWalk="True">
+								<Properties>
+									<Property Name="ObjectType">
+										<Value PropertyType="0" Value="Dialog" Type="5" />
+									</Property>
+									<Property Name="Name">
+										<Value PropertyType="0" Value="Dialog(&quot;Idera Dashboard Install Validation&quot;)" Type="5" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="btn_Cancel" Key="{9D048638-1C6D-428A-9057-4600110099C5}" ParallelWalk="True">
+										<Properties>
+											<Property Name="ObjectType">
+												<Value PropertyType="0" Value="Button" Type="5" />
+											</Property>
+											<Property Name="Name">
+												<Value PropertyType="0" Value="Button(&quot;Cancel&quot;)" Type="5" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>

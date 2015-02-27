@@ -1,0 +1,9 @@
+BattleShip game written in JavaScript.
+Requirements:
+- Create the field (matrix N x N)
+- Create X number of ships/tanks
+- Request to user the “shot”
+- Based user input, hit, kill or miss the shot
+- User wins once he kills all the ships/tanks
+-
+Call > Player()
