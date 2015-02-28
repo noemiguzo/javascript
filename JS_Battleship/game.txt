@@ -1,0 +1,17 @@
+Player
+Game
+Ship
+Field
+Shot
+
+
+
+var bsg = new Game();
+var player = new Player('Leo');
+var ship = new Ship();
+
+field.draw(size)
+field.addShip(ship)
+do 
+	bsg.getUserShot()
+while(bsg.status == 'GAME OVER')
