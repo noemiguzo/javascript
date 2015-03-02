@@ -1,8 +1,9 @@
+
 // Field class
 var Field = function(){
 	// Constructor code
 	this.size = 8; // Optional
-	this.numShips = 1; // Optional
+	this.numShips = 8; // Optional
 	this._field = [];
 	this._ships = [];
 	
@@ -27,19 +28,27 @@ var Field = function(){
         }*/
 	};
 	
-	this._drawShip = function(ship){
-		var initPos = parseInt(Math.random() * (this.size - ship.size));
+	this._drawShip = function(ship,j){
+		 var initPos2= this.getValueRam(this.size,ship.size);
 		
-		for (var i = initPos; i < (initPos + ship.size); i++) {
-			this._field[0][i] = ship.id;
+		for (var i = initPos2; i < (initPos2 + ship.size); i++) {
+			this._field[j][i] = ship.id;	
 		}
 	};
 	
+	this.getValueRam = function(size, ship_size){
+		var initPos = parseInt(Math.random() * (size - ship_size));
+	  return initPos;
+	};
+	
 	this._initShips = function() {
+	var j=0;
 		for (var i = 1; i <= this.numShips; i++) {
+		  
 			var ship = new Ship(i);
 			this._ships[ship.id] = ship;
-			this._drawShip(ship);
+			this._drawShip(ship,j);
+			j++;
 		}
 	};
 	
