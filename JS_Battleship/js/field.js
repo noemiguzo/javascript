@@ -1,3 +1,4 @@
+
 // Field class
 var Field = function(){
 	// Constructor code
