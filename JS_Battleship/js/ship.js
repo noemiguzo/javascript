@@ -1,7 +1,7 @@
 // Ship class
-var Ship = function(id){
+var Ship = function(id,size){
 	this.id = id;
-	this.size = 3;
+	this.size =size;
 	this.status = 'ALIVE';
 	this.numShots = 0;
 	

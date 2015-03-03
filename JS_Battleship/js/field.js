@@ -2,8 +2,8 @@
 // Field class
 var Field = function(){
 	// Constructor code
-	this.size = 8; // Optional
-	this.numShips = 8; // Optional
+	this.size = gSetting.size; // Optional
+	this.numShips = [gSetting.numShipsL1,gSetting.numShipsL2,gSetting.numShipsL3]; // Optional
 	this._field = [];
 	this._ships = [];
 	
@@ -42,13 +42,16 @@ var Field = function(){
 	};
 	
 	this._initShips = function() {
-	var j=0;
-		for (var i = 1; i <= this.numShips; i++) {
-		  
-			var ship = new Ship(i);
-			this._ships[ship.id] = ship;
-			this._drawShip(ship,j);
-			j++;
+	var j=1;
+	var qs=this.numShips.length;
+		for (var i = 0; i < qs; i++) {
+			for (var k = 1; k <= this.numShips[i]; k++) {
+			  
+				var ship = new Ship(j,i+1);
+				this._ships[ship.id] = ship;
+				this._drawShip(ship,j-1);
+				j++;
+			}
 		}
 	};
 	
