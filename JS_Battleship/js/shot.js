@@ -1,2 +1,4 @@
 // Shot class
-var Shot = function(){};
+var Shot = function(){
+
+};

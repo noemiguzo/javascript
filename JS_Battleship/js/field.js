@@ -6,7 +6,8 @@ var Field = function(){
 	this.numShips = [gSetting.numShipsL1,gSetting.numShipsL2,gSetting.numShipsL3]; // Optional
 	this._field = [];
 	this._ships = [];
-	
+	this.regExp = new RegExp(/^[0-9]+$/);
+	this.regExpShot = new RegExp(/^[0-9]+[,][0-9]+/);
 	// Definition of class method
 	this._initField = function() {
 	 for(var i=0; i<this.size; i++) {
@@ -61,16 +62,19 @@ var Field = function(){
         var x = parseInt(pos[0], 10);
         var y = parseInt(pos[1], 10);
 		var val = this._field[x][y];
-		if (val != '0') {
-			var ship = this._ships[val];
-			ship.getShot();
-			this._field[x][y] = 'H';
-			console.log(ship.status);
+		if(this.regExp.test(val)){	
+			if (val != '0') {
+				var ship = this._ships[val];
+				ship.getShot();
+				this._field[x][y] = 'H';
+				console.log(ship.status);
+			}		
+			else {
+				this._field[x][y] = 'F';
+				console.log('FAIL');
+			}
 		}
-		else {
-			this._field[x][y] = 'F';
-			console.log('FAIL');
-		}
+		else {console.log('FAIL, shot already exists');}
 		this.drawn();
 	};
 	
@@ -80,7 +84,20 @@ var Field = function(){
 				return true;
 		}
 	};
-	
+	this.validationShot=function(coorShot){
+		// if the string is empty
+		if (coorShot==""){return false;}
+		//if the string follow the ^[0-9]+[,][0-9]+, for example:0,2			
+		if(this.regExpShot.test(coorShot)){	
+			var coorShot = coorShot.split(",");
+			var x = parseInt(coorShot[0], 10);
+			var y = parseInt(coorShot[1], 10);
+			if (x >= this.size || y>= this.size) {return false; }
+			return true;
+		}
+		else {return false;}
+		
+	}
 	this._initField();
 	this._initShips();
 	this.drawn();
