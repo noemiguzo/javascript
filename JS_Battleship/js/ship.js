@@ -4,6 +4,7 @@ var Ship = function(id,size){
 	this.size =size;
 	this.status = 'ALIVE';
 	this.numShots = 0;
+	this.attemptsDrawn=0;
 	
 	this.getShot = function(){
 		this.numShots++;

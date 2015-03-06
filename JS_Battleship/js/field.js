@@ -29,13 +29,70 @@ var Field = function(){
         }*/
 	};
 	
-	this._drawShip = function(ship,j){
-		 var initPos2= this.getValueRam(this.size,ship.size);
-		
-		for (var i = initPos2; i < (initPos2 + ship.size); i++) {
-			this._field[j][i] = ship.id;	
+	/* Function to draw given a ship , the filed , in (x,y) random coordinates 
+	* @param {number}ship 	
+	*/
+	this._drawShip = function(ship){
+		var initPosx= this.getValueRam(this.size,ship.size);	
+		var initPosy= this.getValueRam(this.size,ship.size);
+		var orientation= this.getValueRam(2,0); //[0,1] 0- Horizontal, 1 -Vertical	
+		console.log("..." + ship.id + " "+ initPosx + "," + initPosy +"---" + orientation );
+		if (orientation==0) {
+			for (var i = initPosy; i < (initPosy + ship.size); i++) {
+			//first ask if there not any ship
+				if (this._field[initPosx][i]==0) {
+					this._field[initPosx][i] = ship.id;
+				}				
+				else {  //if a crash then remove the ship an try again
+					this._removeShip(initPosx,initPosy,orientation,ship);
+					break;
+				}
+			}
 		}
+		else {
+			for (var i = initPosx; i < (initPosx + ship.size); i++) {
+			//first ask if there not any ship
+				if (this._field[i][initPosy]==0) {
+					this._field[i][initPosy] = ship.id;	
+				}
+				//if a crash then remove the ship an try again
+				else { this._removeShip(initPosx,initPosy,orientation,ship);
+					break;
+				}
+			}
+		}
+		
 	};
+	/* Function to remove a ship when this can be drawn fully
+	* @param {number} initPosx
+	* @param {number} initPosy
+	* @param {number} orientation
+	*/
+	this._removeShip=function(initPosx,initPosy,orientation,ship){
+		if (orientation==0) {
+			for (var i = initPosy; i <(initPosy + ship.size); i++) {
+			//first ask if ship has been drawn
+				if (this._field[initPosx][i]==ship.id) {
+					this._field[initPosx][i] = 0;	
+				}					
+			}
+		}
+		else {
+			for (var i = initPosx; i < (initPosx + ship.size); i++) {
+			//first ask if ship has been drawn
+				if (this._field[i][initPosy]==ship.id) {
+					this._field[i][initPosy] =0 ;	
+				}					
+			}
+		}
+		//try again 	
+		ship.attemptsDrawn++;
+		// controlling the number of attempts to prevent overflows,maximum 4 times
+		if (ship.attemptsDrawn<5){this._drawShip(ship)}
+	};
+	
+	/*function to get random integer
+	*/
 	
 	this.getValueRam = function(size, ship_size){
 		var initPos = parseInt(Math.random() * (size - ship_size));
