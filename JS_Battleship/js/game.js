@@ -15,7 +15,7 @@ var Game = function(){
 		var player = this.players[0];
 		do {
 			var limit = player.field.size - 1;
-			var shot = window.prompt("Shot 'x,y'?[0 - " + limit + "], for example: '2,1'");
+			var shot = window.prompt("Enter a shot for the position x,y into of range[], [0 - " + limit + "], for example: '2,1'");
 
 			if (shot == "") {
 			window.alert("Invalid shot!!!");	break;
