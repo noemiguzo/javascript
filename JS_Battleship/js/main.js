@@ -1,8 +1,13 @@
 // main js file
 
 var bsg = new Game();
-//setting 
 
-	console.log(gSetting.nplayers);
-	bsg.start(parseInt(gSetting.nplayers, 10));
+//Get the number of players set on config.js file
+var numPlayers = getSetting.numPlayers;
+
+//Open Console log according to number of players 
+console.log(numPlayers);
+
+//Star the game according to number of players 
+bsg.start(parseInt(numPlayers, 10));
 	  

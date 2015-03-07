@@ -1,15 +1,19 @@
 
-// Field class
+/**
+* Class with attributes and methods for Field game
+* @constructor
+*/
 var Field = function(){
-	// Constructor code
-	this.size = gSetting.size; // Optional
-	this.numShips = [gSetting.numShipsL1,gSetting.numShipsL2,gSetting.numShipsL3]; // Optional
+
+	this.size = getSetting.size;
+	this.numShips = [getSetting.numShipsL1,getSetting.numShipsL2,getSetting.numShipsL3];
 	this._field = [];
 	this._ships = [];
 	this.regExp = new RegExp(/^[0-9]+$/);
 	this.regExpShot = new RegExp(/^[0-9]+[,][0-9]+/);
-/**
-     * function that generate the matrix 
+
+	/**
+     * Method that generate the matrix 
      * @private
      */
 	this._initField = function() {
@@ -20,19 +24,22 @@ var Field = function(){
             }			
         }
 	};
+
+	/**
+     * Method to drawn the field matrix 
+     */
 	this.drawn = function() {
 
 		console.log("TEST:");
-		for(var i=0; i<this.size; i++) {           
+		for(var i=0; i < this.size; i++) {           
 			console.log( i + '> ' + this._field[i].join('-'));			
         }
-		/*console.log("PLAYER:");
-		for(var i=0; i<this.size; i++) {           
-			console.log( i + '> ' + this._field[i].join('-').replace(/1/g, '0'));
-        }*/
 	};
 	
-	/* Function to draw given a ship , the filed , in (x,y) random coordinates 
+	/**
+	*Method to draw given a ship , the filed , in (x,y) random coordinates 
+	*
+	* @private
 	* @param {number}ship 	
 	*/
 	this._drawShip = function(ship){
@@ -42,31 +49,32 @@ var Field = function(){
 		console.log("..." + ship.id + " "+ initPosx + "," + initPosy +"---" + orientation );
 		if (orientation==0) {
 			for (var i = initPosy; i < (initPosy + ship.size); i++) {
-			//first ask if there not any ship
+
+				//first ask if there not any ship
 				if (this._field[initPosx][i]==0) {
 					this._field[initPosx][i] = ship.id;
-				}				
-				else {  //if a crash then remove the ship an try again
+				} else {  //if a crash then remove the ship an try again
 					this._removeShip(initPosx,initPosy,orientation,ship);
 					break;
 				}
 			}
-		}
-		else {
+		} else {
 			for (var i = initPosx; i < (initPosx + ship.size); i++) {
-			//first ask if there not any ship
+
+				//first ask if there not any ship
 				if (this._field[i][initPosy]==0) {
 					this._field[i][initPosy] = ship.id;	
-				}
-				//if a crash then remove the ship an try again
-				else { this._removeShip(initPosx,initPosy,orientation,ship);
+				} else { //if a crash then remove the ship an try again
+					this._removeShip(initPosx,initPosy,orientation,ship);
 					break;
 				}
 			}
 		}
 		
 	};
-	/* Function to remove a ship when this can be drawn fully
+
+	/** 
+	*Method to remove a ship when this can be drawn fully
 	* @param {number} initPosx
 	* @param {number} initPosy
 	* @param {number} orientation
@@ -74,29 +82,32 @@ var Field = function(){
 	this._removeShip=function(initPosx,initPosy,orientation,ship){
 		if (orientation==0) {
 			for (var i = initPosy; i <(initPosy + ship.size); i++) {
-			//first ask if ship has been drawn
+
+				//first ask if ship has been drawn
 				if (this._field[initPosx][i]==ship.id) {
 					this._field[initPosx][i] = 0;	
 				}					
 			}
-		}
-		else {
+		} else {
 			for (var i = initPosx; i < (initPosx + ship.size); i++) {
-			//first ask if ship has been drawn
-				if (this._field[i][initPosy]==ship.id) {
+
+				//first ask if ship has been drawn
+				if (this._field[i][initPosy] == ship.id) {
 					this._field[i][initPosy] =0 ;	
 				}					
 			}
 		}
-		//try again 	
-		ship.attemptsDrawn++;
+		ship.attemptsDrawn++; //try again 
+
 		// controlling the number of attempts to prevent overflows,maximum 4 times
-		if (ship.attemptsDrawn<5){this._drawShip(ship)}
+		if (ship.attemptsDrawn<5) {
+			this._drawShip(ship)
+		}
 	};
 	
-	/*function to get random integer
+	/**
+	* Method to get random integer
 	*/
-	
 	this.getValueRam = function(size, ship_size){
 		var initPos = parseInt(Math.random() * (size - ship_size));
 	  return initPos;
@@ -116,7 +127,10 @@ var Field = function(){
 		}
 	};
 	
-	
+	/**
+	* Method to evaluate shot
+	*@param pos
+	*/
 	this.evalShot = function(pos) {
 		var pos = pos.split(",");
         var x = parseInt(pos[0], 10);
@@ -137,13 +151,21 @@ var Field = function(){
 		else {console.log('FAIL, shot already exists');}
 		this.drawn();
 	};
-	
+
+	/**
+	* Method to verify if there is any ship alive
+	*/
 	this.isAnyShipAlive = function() {
 		for (var i = 1; i < this._ships.length; i++) {
 			if (this._ships[i].status != 'KILL')
 				return true;
 		}
 	};
+
+	/**
+	* Method to  validate the entered shot
+	*@param coorShot, i.e. 2,1
+	*/
 	this.validationShot=function(coorShot){
 		// if the string is empty
 		if (coorShot==""){return false;}

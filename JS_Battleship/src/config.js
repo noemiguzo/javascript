@@ -1,19 +1,17 @@
 /**
- * Values for start the game
+ * Settings to start the game
+ *
  * @type {{size: number,
-  * nplayers: number,
-  * count: number,
-  * numShipsL1: number,
-  * numShipsL2: number,
-   * numShipsL3: number,
-   * RegExp: string:validation of numbers for user}}
- */
+ * numPlayers: number of players
+ * numShipsL1: number, i.e. numShipsL1: 2 it will be generate 2 shipts of size 1
+ * numShipsL2: number, i.e. numShipsL2: 1 it will be generate 1 shipt of size 2
+ * numShipsL3: number, i.e. numShipsL3: 2 it will be generate 2 shipts of size 3}}
+ */ 
 
-gSetting = {
-  size: 8,
-  nplayers: 1,
-  count: 5,
+getSetting = {
+  size: 3,
+  numPlayers:1,
   numShipsL1:1,
-  numShipsL2:4,
-  numShipsL3:2,
+  numShipsL2:1,
+  numShipsL3:0,
 }
