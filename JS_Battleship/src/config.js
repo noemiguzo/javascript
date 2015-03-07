@@ -9,9 +9,9 @@
  */ 
 
 getSetting = {
-  size: 3,
+  size:5,
   numPlayers:1,
-  numShipsL1:1,
+  numShipsL1:2,
   numShipsL2:1,
-  numShipsL3:0,
+  numShipsL3:1,
 }
