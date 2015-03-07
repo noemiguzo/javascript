@@ -31,7 +31,7 @@ var Field = function(){
 	this.drawn = function() {
 
 		console.log("TEST:");
-		for(var i=0; i < this.size; i++) {           
+		for(var i=0; i < this.size; i++) {      		
 			console.log( i + '> ' + this._field[i].join('-'));			
         }
 	};
@@ -46,7 +46,7 @@ var Field = function(){
 		var initPosx= this.getValueRam(this.size,ship.size);	
 		var initPosy= this.getValueRam(this.size,ship.size);
 		var orientation= this.getValueRam(2,0); //[0,1] 0- Horizontal, 1 -Vertical	
-		console.log("..." + ship.id + " "+ initPosx + "," + initPosy +"---" + orientation );
+		console.log("..id ship:" + ship.id + " Pos X:"+ initPosx + ", Pos Y:" + initPosy +"---" + orientation );
 		if (orientation==0) {
 			for (var i = initPosy; i < (initPosy + ship.size); i++) {
 
@@ -133,8 +133,8 @@ var Field = function(){
 	*/
 	this.evalShot = function(pos) {
 		var pos = pos.split(",");
-        var x = parseInt(pos[0], 10);
-        var y = parseInt(pos[1], 10);
+        var y = parseInt(pos[0], 10);
+        var x = parseInt(pos[1], 10);
 		var val = this._field[x][y];
 		if(this.regExp.test(val)){	
 			if (val != '0') {
