@@ -16,14 +16,13 @@ var Game = function(){
 		do {
 			var limit = player.field.size - 1;
 			// var shot = new Shot(window.prompt('Shot?  'x,y' coordinates,[0 - ' + limit + ']', for example: 2,1));
-			var shot = window.prompt("Shot 'x,y'?[0 - " + limit + "], for example: '2,1'");
-			if (shot=="") { break;}
+			var shot = window.prompt("Enter 2 values for example: '2,1' into of range 'x,y':[0 - " + limit + "], ");
+			if (shot=="") { window.alert("Invalid shot!!!"); break;}
 			if (player.field.validationShot(shot)){
 				player.field.evalShot(shot);
 			}
-			else { console.log ("Invalid shot.");}
+			else { window.alert("Invalid shot!!!");}
 			
-		//} while(this.players[0].status == 'LOOSER');
 		} while(player.isLooser());
 	};
 	
