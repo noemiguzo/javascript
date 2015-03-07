@@ -18,13 +18,13 @@ var Game = function(){
 			var shot = window.prompt("Shot 'x,y'?[0 - " + limit + "], for example: '2,1'");
 
 			if (shot == "") {
-				break;
+			window.alert("Invalid shot!!!");	break;
 			}
 
 			if (player.field.validationShot(shot)){
 				player.field.evalShot(shot);
 			} else { 
-				console.log ("Invalid shot.");
+			 window.alert("Invalid shot!!!");
 			}
 		} while(player.isLooser());
 	};
