@@ -8,7 +8,10 @@ var Field = function(){
 	this._ships = [];
 	this.regExp = new RegExp(/^[0-9]+$/);
 	this.regExpShot = new RegExp(/^[0-9]+[,][0-9]+/);
-	// Definition of class method
+/**
+     * function that generate the matrix 
+     * @private
+     */
 	this._initField = function() {
 	 for(var i=0; i<this.size; i++) {
             this._field[i] = [];
