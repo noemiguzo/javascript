@@ -9,7 +9,7 @@ var Field = function(){
 	this.numShips = [getSetting.numShipsL1,getSetting.numShipsL2,getSetting.numShipsL3];
 	this._field = [];
 	this._ships = [];
-	this.regExp = new RegExp(/^[0-9]+$/); //only numbres
+	this.regExp = new RegExp(/^[0-9]+$/); //only numbers
 	this.regExpShot = new RegExp(/^[0-9]+[,][0-9]+/);
 
 	/**
