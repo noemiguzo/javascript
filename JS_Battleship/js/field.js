@@ -9,31 +9,31 @@ var Field = function(){
 	this.numShips = [getSetting.numShipsL1,getSetting.numShipsL2,getSetting.numShipsL3];
 	this._field = [];
 	this._ships = [];
-	this.regExp = new RegExp(/^[0-9]+$/);
+	this.regExp = new RegExp(/^[0-9]+$/); //only numbres
 	this.regExpShot = new RegExp(/^[0-9]+[,][0-9]+/);
 
 	/**
-     * Method that generate the matrix 
-     * @private
-     */
+     	* Method that generate the matrix 
+     	* @private
+     	*/
 	this._initField = function() {
 	 for(var i=0; i<this.size; i++) {
             this._field[i] = [];
             for(var j=0; j<this.size; j++) {
                 this._field[i][j] = '0';
             }			
-        }
+         }
 	};
 
 	/**
-     * Method to drawn the field matrix 
-     */
+     	* Method to drawn the field matrix 
+     	*/
 	this.drawn = function() {
 
 		console.log("TEST:");
 		for(var i=0; i < this.size; i++) {      		
 			console.log( i + '> ' + this._field[i].join('-'));			
-        }
+        	}
 	};
 	
 	/**
@@ -46,10 +46,9 @@ var Field = function(){
 		var initPosx= this.getValueRam(this.size,ship.size);	
 		var initPosy= this.getValueRam(this.size,ship.size);
 		var orientation= this.getValueRam(2,0); //[0,1] 0- Horizontal, 1 -Vertical	
-		console.log("..id ship:" + ship.id + " Pos X:"+ initPosx + ", Pos Y:" + initPosy +"---" + orientation );
+		console.log("Drawing..id_ship:" + ship.id + " Pos X:"+ initPosx + ", Pos Y:" + initPosy +"---" + orientation );
 		if (orientation==0) {
 			for (var i = initPosy; i < (initPosy + ship.size); i++) {
-
 				//first ask if there not any ship
 				if (this._field[initPosx][i]==0) {
 					this._field[initPosx][i] = ship.id;
@@ -60,7 +59,6 @@ var Field = function(){
 			}
 		} else {
 			for (var i = initPosx; i < (initPosx + ship.size); i++) {
-
 				//first ask if there not any ship
 				if (this._field[i][initPosy]==0) {
 					this._field[i][initPosy] = ship.id;	
@@ -74,7 +72,7 @@ var Field = function(){
 	};
 
 	/** 
-	*Method to remove a ship when this can be drawn fully
+	* Method to remove a ship when this can be drawn fully
 	* @param {number} initPosx
 	* @param {number} initPosy
 	* @param {number} orientation
@@ -181,6 +179,7 @@ var Field = function(){
 		} else {return false;}
 		
 	}
+	
 	this._initField();
 	this._initShips();
 	this.drawn();
