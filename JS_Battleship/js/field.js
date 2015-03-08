@@ -46,7 +46,7 @@ var Field = function(){
 		var initPosx= this.getValueRam(this.size,ship.size);	
 		var initPosy= this.getValueRam(this.size,ship.size);
 		var orientation= this.getValueRam(2,0); //[0,1] 0- Horizontal, 1 -Vertical	
-		console.log("Drawing..id_ship:" + ship.id + " Pos X:"+ initPosx + ", Pos Y:" + initPosy +"---" + orientation );
+		console.log("Try to draw ship:" + ship.id + " Pos X:"+ initPosx + ", Pos Y:" + initPosy +"---" + orientation );
 		if (orientation==0) {
 			for (var i = initPosy; i < (initPosy + ship.size); i++) {
 				//first ask if there not any ship
