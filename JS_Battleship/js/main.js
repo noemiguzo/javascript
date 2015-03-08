@@ -6,7 +6,7 @@ var bsg = new Game();
 var numPlayers = getSetting.numPlayers;
 
 //Open Console log according to number of players 
-console.log(numPlayers);
+console.log('Number of players: ' + numPlayers);
 
 //Star the game according to number of players 
 bsg.start(parseInt(numPlayers, 10));
