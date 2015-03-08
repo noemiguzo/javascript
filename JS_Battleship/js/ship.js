@@ -10,6 +10,7 @@ var Ship = function(id,size){
 	this.status = 'ALIVE';
 	this.numShots = 0;
 	this.attemptsDrawn=0;
+    
     /**
      * Method that change the status according to num of shots
       */	

@@ -5,6 +5,7 @@
 var Player = function(){
 	this.field = new Field();
 	this.name = window.prompt('Enter your name?');
+    
     /**
      * Method that return if the ship is alive for the ¨field¨
      * that method is evaluate in class field

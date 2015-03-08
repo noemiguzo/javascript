@@ -15,10 +15,11 @@ var Game = function(){
 		var player = this.players[0];
 		do {
 			var limit = player.field.size - 1;
-			var shot = window.prompt("Enter a shot for the position x,y into of range[], [0 - " + limit + "], for example: '2,1'");
+			var shot = window.prompt("Enter a shot for the position x,y into of range [0 - " + limit + "], for example: '2,1'");
 
 			if (shot == "") {
-			window.alert("Invalid shot!!!");	break;
+				window.alert("You did not enter any shot");
+				break;
 			}
 
 			if (player.field.validationShot(shot)){
@@ -39,6 +40,10 @@ var Game = function(){
 		for (var i = 0 ; i < numsPlayers; i++) {
 			this.players.push(new Player());
 		}
-		this.play();
+		if (this.players[0].name == "") {
+			window.alert("You did not enter any name");
+		} else {
+			this.play();
+		}
 	}
 };

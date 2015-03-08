@@ -113,6 +113,9 @@ var Field = function(){
 	  return initPos;
 	};
 	
+	/**
+	* Method to create the ships
+	*/
 	this._initShips = function() {
 	var j=1;
 	var qs=this.numShips.length;
@@ -141,15 +144,13 @@ var Field = function(){
 				var ship = this._ships[val];
 				ship.getShot();
 				this._field[x][y] = 'H';
-				console.log(ship.status);
-			}		
-			else {
+				console.log(ship.status + ' the ship with ID: ' + ship.id);
+			} else {
 				this._field[x][y] = 'F';
 				console.log('FAIL');
 			}
-		}
-		else {console.log('FAIL, shot already exists');}
-		this.drawn();
+		} else {console.log('FAIL, shot already exists');}
+			this.drawn();
 	};
 
 	/**
@@ -168,16 +169,16 @@ var Field = function(){
 	*/
 	this.validationShot=function(coorShot){
 		// if the string is empty
-		if (coorShot==""){return false;}
+		if (coorShot == ""){return false;}
+
 		//if the string follow the ^[0-9]+[,][0-9]+, for example:0,2			
-		if(this.regExpShot.test(coorShot)){	
+		if(this.regExpShot.test(coorShot)) {	
 			var coorShot = coorShot.split(",");
 			var x = parseInt(coorShot[0], 10);
 			var y = parseInt(coorShot[1], 10);
 			if (x >= this.size || y>= this.size) {return false; }
 			return true;
-		}
-		else {return false;}
+		} else {return false;}
 		
 	}
 	this._initField();
