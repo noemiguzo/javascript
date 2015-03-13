@@ -3,10 +3,16 @@
 * Class with attributes and methods for Field game
 * @constructor
 */
-var Field = function(){
-
-	this.size = getSetting.size;
-	this.numShips = [getSetting.numShipsL1,getSetting.numShipsL2,getSetting.numShipsL3];
+var Field = function(size, numShips){
+	
+	if (size =="undefined" ){		
+		this.size = getSetting.size;
+		this.numShips = [getSetting.numShipsL1,getSetting.numShipsL2,getSetting.numShipsL3];
+	}
+	else {
+		this.size = 6;
+		this.numShips = [3,2,1];
+	}
 	this._field = [];
 	this._ships = [];
 	this.regExp = new RegExp(/^[0-9]+$/); //only numbers
