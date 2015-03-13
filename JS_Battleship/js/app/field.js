@@ -5,13 +5,13 @@
 */
 var Field = function(size, numShips){
 	
-	if (size =="undefined" ){		
+	if (size =="undefined" ){	
 		this.size = getSetting.size;
-		this.numShips = [getSetting.numShipsL1,getSetting.numShipsL2,getSetting.numShipsL3];
+		this.numShips = [getSetting.numShipsL1,getSetting.numShipsL2,getSetting.numShipsL3];		
 	}
 	else {
-		this.size = 6;
-		this.numShips = [3,2,1];
+		this.size = size;
+		this.numShips =numShips;		
 	}
 	this._field = [];
 	this._ships = [];
