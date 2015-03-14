@@ -1,5 +1,10 @@
-//ship spec
 
+//ship spec
+/*
+	When size value are letters should be invalid	
+	When size value are letters should be invalid
+	
+*/
  var n;
 	var field;
 	var size;
@@ -7,7 +12,7 @@
 	size="wrong-size";
 	ships=[1,2,1];
 	
-describe('Field - valid shots scenario: ',function(){
+describe('Ship scenario: ',function(){
 			
 	describe('Given I have a field', function(){
 		ship = new Ship(size,ships);
