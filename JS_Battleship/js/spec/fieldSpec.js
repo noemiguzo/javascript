@@ -22,7 +22,8 @@ describe('Field - valid shots scenario: ',function(){
 		it('When I type  the shot 0,0  then the shots should be valid',function(){
 			var validRes0=field.validationShot('0,0');
 			expect(validRes0).toBe(true);
-		});		
+		});
+		
 		it('When I type  the shot n-1,n-1 then the shots should be valid',function(){
 			var shotN= (n-1) + ',' + (n-1)
 			var validResn = field.validationShot(shotN);
@@ -38,11 +39,13 @@ describe('Field - valid shots scenario: ',function(){
 			var validRes0n = field.validationShot(shot0N);
 			expect(validRes0n).toBe(true);
 		});	
+		
 	});
 });
 /*
 	Given I have a filed
 	When I left empty field  then the shots should be invalid  
+	When I type  the shot with letters then the shots should be invalid
 	When I type  the shot n,n then the shots should be invalid 
 	When I type  the shot n,0 then the shots should be invalid 
 	When I type  the shot 0,n then the shots should be invalid	
@@ -57,7 +60,15 @@ describe('Field - invalid shots scenario: ',function(){
 		it('When I left empty field  then the shots should be invalid ',function(){
 			var invalidRes=field.validationShot('');
 			expect(invalidRes).toBe(false);
-		});		
+		});	
+		it('When I type  the shot with letters then the shots should be invalid',function(){
+					var validRes0=field.validationShot('shotwrong');
+					expect(validRes0).toBe(false);
+				});	
+		it('When I type  the shot 0256  then the shots should be invalid',function(){
+					var validRes0=field.validationShot('0256');
+					expect(validRes0).toBe(false);
+				});				
 		it('When I type  the shot n,n then the shots should be invalid',function(){
 			var shotN= n + ',' + n
 			var invalidRes=field.validationShot(shotN);
@@ -88,16 +99,22 @@ describe('Field - invalid shots scenario: ',function(){
 /*
 	get random integer between
 	when I give [0,2] range then I should get an integer between 0 and 1
+	when I give [0,2] range  should get an integer between 0 and 2 but is invalid with greater that 2
 */
 describe('Field - get random integers scenario: ',function(){
 			
 	describe('Given I have a field', function(){
 		field = new Field(size,ships);
 		n=field.size;
-		it('when I give [0,2] range then I should get an integer between 0 and 2',function(){
+		it('when I give [0,2] range then should get an integer between 0 and 2',function(){
 			var ramRes=field.getValueRam(0,2);
 			expect(ramRes).toBeLessThan(2);
 			expect(ramRes).toBeGreaterThan(0-2);
-		});					
+		});	
+		it('when I give [0,2] range  should get an integer between 0 and 2 but is invalid with greater that 2',function(){
+			var ramRes=field.getValueRam(2,10);
+			expect(ramRes).toBeLessThan(2);
+			expect(ramRes).toBeGreaterThan(0-2);
+		});
 	});
 });
