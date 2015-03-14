@@ -5,11 +5,11 @@
 */
 var Field = function(size, numShips){
 	
-	if (size =="undefined" ){	
+	if (typeof size == 'undefined'){	
 		this.size = getSetting.size;
 		this.numShips = [getSetting.numShipsL1,getSetting.numShipsL2,getSetting.numShipsL3];		
 	}
-	else {
+	else { // implemented to use jasmine
 		this.size = size;
 		this.numShips =numShips;		
 	}
