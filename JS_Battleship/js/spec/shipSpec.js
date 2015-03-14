@@ -2,7 +2,7 @@
 //ship spec
 /*
 	When size value are letters should be invalid	
-	When size value are letters should be invalid
+	When ships value are letters should be invalid
 	
 */
  var n;
@@ -23,7 +23,7 @@ describe('Ship scenario: ',function(){
 			expect(validRes0).toBe(false);
 		});
 		
-		it('When size value are letters should be invalid',function(){
+		it('When ships value are letters should be invalid',function(){
 		    ships=[1,2,"Wrong-value"];
 		    ship = new Ship(size,ships);
 		  	var validRes0=ship._initShips();
