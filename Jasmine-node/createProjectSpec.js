@@ -9,11 +9,11 @@ frisby.globalSetup({
 		inspectOnFailure: true
 	}
 });
-		
+var now = new Date();		
 for (var i=0; i<2; i++){		
-	var now = new Date();
+	
 	var project={  
-			Content: "new project"  + now.getTime() + i
+			Content: "New project "  + now.getTime() + i
 	};
 	frisby.create('Create project')
 		.post('https://todo.ly/api/projects.json',project, {json: true})
