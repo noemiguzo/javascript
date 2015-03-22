@@ -33,7 +33,6 @@ var createItem = function(pId,n){
 	//create items
 	return frisby.create('Create items')
 		.post('https://todo.ly/api/items.json',item, {json: true})
-		.expectStatus(200)
 }
 /* get a project by ID
 */
@@ -62,8 +61,8 @@ frisby.create('Given I have more that one project ')
 		.expectStatus(200) 
 		.afterJSON(function(json){
 			//get the id and the itemscount of the first project
-			var pId=(json[i].Id);
-			var currentItemsCount=(json[i].ItemsCount);
+			var pId=(json[0].Id);
+			var currentItemsCount=(json[0].ItemsCount);
 			//adding an item in the first project
 			createItem(pId).expectStatus(200).toss();	
 			//validation  the number of items should be increased
