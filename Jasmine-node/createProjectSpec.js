@@ -9,6 +9,9 @@ frisby.globalSetup({
 		inspectOnFailure: true
 	}
 });
+/*
+	create new projects
+*/
 var now = new Date();		
 for (var i=0; i<2; i++){		
 	

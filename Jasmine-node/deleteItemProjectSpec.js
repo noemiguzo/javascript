@@ -10,7 +10,6 @@ frisby.globalSetup({
 });
 /*
 
-
 After delete a items of a project the number of items is decreased
 	Given I have more that one project 
 	Select the a project with more than one items
