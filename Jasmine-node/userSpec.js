@@ -9,7 +9,7 @@ frisby.globalSetup({
 });
 //create a user
 var user={
-    Email: 'myqa201405w@email.com',
+    Email: 'myqa201406w@email.com',
     FullName: 'Joe Blow qa',
 	"Password": "pASswoRd"
 };
