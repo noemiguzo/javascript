@@ -14,7 +14,7 @@ var user={
 	"Password": "pASswoRd"
 };
 var verifyUser={
-    Email: 'myqa201405w@email.com',
+    Email: 'myqa201406w@email.com',
     FullName: 'Joe Blow qa'
 };
 frisby.create('Create a new user')
