@@ -49,9 +49,9 @@ var deleteItemByIdproject = function(Id){
 		.get('https://todo.ly/api/projects/' + Id + '/items.json')
 		.expectStatus(200)	
 		.afterJSON(function(json){
-			var nitems=json.length;
-			//delete item
-			frisby.create('Delete proect with ID:' + json[0].Id)
+			
+			//delete the fist item item
+			frisby.create('Delete project with ID:' + json[0].Id)
 				.delete('https://todo.ly/api/items/' + json[0].Id + '.json')
 				.expectStatus(200)
 				.inspectJSON()
