@@ -9,14 +9,14 @@ var frisby = require('frisby');
 frisby.create('Verify that the user is authenticated')
     .get('https://todo.ly/api/authentication/isauthenticated.json')
     .inspectJSON()
-    .addHeaders({'Authorization': 'Basic bm9lbGlhbWVsZ2FyZWpvamF2YXNjcmlwdEBnbWFpbC5jb206Q29udHJvbDEyMw=='}) //Basic Auth
+    .addHeaders({'Authorization': 'Basic bm9lbWk0ajdnQGdtYWlsLmNvbToyMDQwMTU4OGou'}) //Basic Auth
     .expectJSONTypes(true)
     .expectStatus(200)
     .afterJSON(function(json){
         frisby.create('Verify get Token')
             .get('https://todo.ly/api/authentication/token.json')
             .inspectJSON()
-            .addHeaders({'Authorization': 'Basic bm9lbGlhbWVsZ2FyZWpvamF2YXNjcmlwdEBnbWFpbC5jb206Q29udHJvbDEyMw=='})
+            .addHeaders({'Authorization': 'Basic bm9lbWk0ajdnQGdtYWlsLmNvbToyMDQwMTU4OGou'})
             .expectJSON({
                 TokenString: String})
             .expectStatus(200)
@@ -33,7 +33,7 @@ frisby.create('Verify that the user is authenticated')
                     .expectJSON(Proyect)
                     .expectStatus(200)
                     .afterJSON(function(resProyect){
-                        console.log( "Proyect Created with Token: " , resProyect.Content);
+                        console.log( "Project Created with Token: " , resProyect.Content);
                     })
                     .toss();
             })

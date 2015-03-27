@@ -75,3 +75,7 @@ isAuthenticatedSpec 		|Returns whether the current request is Authenticated.
 getTokenSpec  				|Get Token
 -----------------------------------------------------------
 deleteTokenSpec  			|Deletes the Token 
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::	
+			FILTER
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+filterSpec					|list of all Filters
