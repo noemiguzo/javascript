@@ -45,9 +45,6 @@ createProjectSpec	 |create new projects
 -----------------------------------------------------------
 deleteAllProjectsSpec	 |Get all non-deleted projects
 			  Delete projects by Id Project
-
-
-
 -----------------------------------------------------------
 projectCRUDSpec 	|CRUD to project
 			Create a new project
@@ -63,10 +60,10 @@ increasedIdProjectSpec | the id project is increased by one
 -----------------------------------------------------------
 getProjectByIdSpec		|Get the first project by id project
 			Given  I have at least one project created in my account
-			 Select a project randomly	
-			 And I create  items for that project
-			 Get project by Id
-			 Then the first project should be displayed
+			Select a project randomly	
+			And I create  items for that project
+			Get project by Id
+			Then the first project should be displayed
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::			
 			IsAuthenticated
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::			
@@ -79,3 +76,7 @@ deleteTokenSpec  			|Deletes the Token
 			FILTER
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 filterSpec					|list of all Filters
+-----------------------------------------------------------
+filterForEachIdSpec | Get item list filtering for each id filter
+					Given I have the filter list
+				   then I should get item list filtering  each  id filter
