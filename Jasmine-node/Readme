@@ -10,6 +10,8 @@ listDefaultProjectUserSpec   |the default id project of the current user is leas
 							And I get the default id project
 							And I create a new project
 							Then the default id project is less to new  id project
+-----------------------------------------------------------	
+updateUserSpec				 |Update full name user
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 			ITEMS
 -----------------------------------------------------------
@@ -58,6 +60,13 @@ increasedIdProjectSpec | the id project is increased by one
 			Get the last id project
 			And I create a new project
 			Then the new id project should be increased by one	
+-----------------------------------------------------------
+getProjectByIdSpec		|Get the first project by id project
+			Given  I have at least one project created in my account
+			 Select a project randomly	
+			 And I create  items for that project
+			 Get project by Id
+			 Then the first project should be displayed
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::			
 			IsAuthenticated
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::			
