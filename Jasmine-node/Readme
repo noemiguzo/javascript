@@ -1,18 +1,23 @@
 ::::::::::::::::::::::::::::::::::::
-file
+			USER
+-----------------------------------------------------------	
+Get the currentUserSpec  	|Get the currentUserSpec'
+-----------------------------------------------------------	
+userSpec  					|create a new user|
+-----------------------------------------------------------	
+listDefaultProjectUserSpec   |the default id project of the current user is least to the new id project
+							Given a user is authentication
+							And I get the default id project
+							And I create a new project
+							Then the default id project is less to new  id project
+::::::::::::::::::::::::::::::::::::
+			ITEMS
 -----------------------------------------------------------
 addItemsSpec 		|All items form a project has same projectId value
 			Given I don't have any project created in my account 
-			When I create a project
+			And I create a project
 			And I create 2 items for that project
 			Then those items belong to the created project
-
------------------------------------------------------------
-createProjectSpec	 |create new projects
-
------------------------------------------------------------
-deleteAllProjectsSpec	 |Get all non-deleted projects
-			  Delete projects by Id Project
 
 -----------------------------------------------------------
 deleteItemProjectSpec    |After delete a items of a project the number of items is decreased
@@ -20,6 +25,7 @@ deleteItemProjectSpec    |After delete a items of a project the number of items 
 			  Select the a project with more than one items
 			  And I delete a item
 			  Then the number of items should be decreased
+			  
 
 -----------------------------------------------------------
 itemsSelectedProjectSpec |The number of items should be increased when a new item is added to the first project 
@@ -28,6 +34,18 @@ itemsSelectedProjectSpec |The number of items should be increased when a new ite
 			  And I create 1 items for that project
 			  Then the number of items should be increased
 
+::::::::::::::::::::::::::::::::::::
+		PROJECT
+::::::::::::::::::::::::::::::::::::
+-----------------------------------------------------------
+createProjectSpec	 |create new projects
+
+-----------------------------------------------------------
+deleteAllProjectsSpec	 |Get all non-deleted projects
+			  Delete projects by Id Project
+
+
+
 -----------------------------------------------------------
 projectCRUDSpec 	|CRUD to project
 			Create a new project
@@ -35,4 +53,4 @@ projectCRUDSpec 	|CRUD to project
 			Update the project
 			Delete the project by Id
 -----------------------------------------------------------
-userSpec  |create a new user|
+
