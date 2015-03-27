@@ -1,4 +1,4 @@
-::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 			USER
 -----------------------------------------------------------	
 Get the currentUserSpec  	|Get the currentUserSpec'
@@ -10,7 +10,7 @@ listDefaultProjectUserSpec   |the default id project of the current user is leas
 							And I get the default id project
 							And I create a new project
 							Then the default id project is less to new  id project
-::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 			ITEMS
 -----------------------------------------------------------
 addItemsSpec 		|All items form a project has same projectId value
@@ -34,9 +34,9 @@ itemsSelectedProjectSpec |The number of items should be increased when a new ite
 			  And I create 1 items for that project
 			  Then the number of items should be increased
 
-::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 		PROJECT
-::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -----------------------------------------------------------
 createProjectSpec	 |create new projects
 
@@ -58,4 +58,8 @@ increasedIdProjectSpec | the id project is increased by one
 			Get the last id project
 			And I create a new project
 			Then the new id project should be increased by one	
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::			
+			IsAuthenticated
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::			
+isAuthenticatedSpec 		|Returns whether the current request is Authenticated.
 
