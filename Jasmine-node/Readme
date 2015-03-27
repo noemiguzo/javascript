@@ -62,4 +62,7 @@ increasedIdProjectSpec | the id project is increased by one
 			IsAuthenticated
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::			
 isAuthenticatedSpec 		|Returns whether the current request is Authenticated.
-
+-----------------------------------------------------------
+getTokenSpec  				|Get Token
+-----------------------------------------------------------
+deleteTokenSpec  			|Deletes the Token 
