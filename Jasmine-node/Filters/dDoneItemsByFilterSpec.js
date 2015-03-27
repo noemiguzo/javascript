@@ -9,16 +9,31 @@ frisby.globalSetup({
 	}
 });
 /*
-* Get item list filtering for each id filter
+* Set Done Items the filter that list more one item	
 * 	Given I have the filter list
-*   then I should get item list filtering  each  id filter
+*   Set Done Items the filter that list more one item	
+*   Then I should get all items done
 */
 var filterById= function(id){
 	console.log ('filter with the given Id: ' + id)
 	return frisby.create('Given I have the filter list')
 	.get('https://todo.ly/api/filters/' + id +'/items.json')
 	.expectStatus(200)
-	.inspectJSON()		
+	.inspectJSON()	
+	.afterJSON(function(json){
+		var sizeFilter =json.length;
+		if (sizeFilter>0){
+			frisby.create('Set Done Items the filter that list more one item')
+			.get('https://todo.ly/api/filters/' + id +'/doneitems.json')
+			.expectStatus(200)
+			.inspectJSON()	
+			.expectJSON({
+					Checked: true
+			})	
+		.toss()
+		}
+		
+	})		
 
 };
 frisby.create('Given I have the filter list')
@@ -31,5 +46,14 @@ frisby.create('Given I have the filter list')
 		for (i=0 ; i <size ; i ++){
 			filterById(json[i].Id).toss();
 		};
+		//validation
+		frisby.create('Then I should get all items don')
+			.get('https://todo.ly/api/items.json')
+			.expectStatus(200)
+			.inspectJSON()	
+			.expectJSON({
+					Checked: true
+			})	
+		.toss()
 	})	
 .toss()

@@ -80,3 +80,8 @@ filterSpec					|list of all Filters
 filterForEachIdSpec | Get item list filtering for each id filter
 					Given I have the filter list
 				   then I should get item list filtering  each  id filter
+-----------------------------------------------------------				  
+setDoneItemsFilterSpec			| Set Done Items the filter that list more one item	
+					Given I have the filter list
+				   Set Done Items the filter that list 	
+				   then I should get all items done
