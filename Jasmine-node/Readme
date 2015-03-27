@@ -1,0 +1,38 @@
+::::::::::::::::::::::::::::::::::::
+file
+-----------------------------------------------------------
+addItemsSpec 		|All items form a project has same projectId value
+			Given I don't have any project created in my account 
+			When I create a project
+			And I create 2 items for that project
+			Then those items belong to the created project
+
+-----------------------------------------------------------
+createProjectSpec	 |create new projects
+
+-----------------------------------------------------------
+deleteAllProjectsSpec	 |Get all non-deleted projects
+			  Delete projects by Id Project
+
+-----------------------------------------------------------
+deleteItemProjectSpec    |After delete a items of a project the number of items is decreased
+			  Given I have more that one project 
+			  Select the a project with more than one items
+			  And I delete a item
+			  Then the number of items should be decreased
+
+-----------------------------------------------------------
+itemsSelectedProjectSpec |The number of items should be increased when a new item is added to the first project 
+			  Given I have more that one project 
+			  Select the first project
+			  And I create 1 items for that project
+			  Then the number of items should be increased
+
+-----------------------------------------------------------
+projectCRUDSpec 	|CRUD to project
+			Create a new project
+			Read all projects
+			Update the project
+			Delete the project by Id
+-----------------------------------------------------------
+userSpec  |create a new user|
