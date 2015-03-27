@@ -53,4 +53,9 @@ projectCRUDSpec 	|CRUD to project
 			Update the project
 			Delete the project by Id
 -----------------------------------------------------------
+increasedIdProjectSpec | the id project is increased by one 
+			Given the list of the projects
+			Get the last id project
+			And I create a new project
+			Then the new id project should be increased by one	
 
