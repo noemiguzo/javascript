@@ -9,14 +9,14 @@
 
 
 Note: Todo.ly account email: noemi4j7g@gmail.com
-					password:20401588j.
+		   password:20401588j.
 					
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 						USER
 --------------------------------------------------------------------------------------------------
-01[S] userSpec  					|create a new user
+01[S] userSpec  				|create a new user
 --------------------------------------------------------------------------------------------------
-02[Sa]Get the currentUserSpec  		|Get the currentUserSpec'
+02[Sa]Get the currentUserSpec  			|Get the currentUserSpec'
 --------------------------------------------------------------------------------------------------		
 03[Sc] listDefaultProjectUserSpec   
 						|the default id project of the current user is least to the new id project
@@ -87,18 +87,18 @@ Note: Todo.ly account email: noemi4j7g@gmail.com
 --------------------------------------------------------------------------------------------------
 14[S]createProjectSpec	 			|create new projects
 --------------------------------------------------------------------------------------------------
-15[Sa]createProjectTokenSpec	 	|create a project  with Token Authentication
+15[Sa]createProjectTokenSpec	 		|create a project  with Token Authentication
 --------------------------------------------------------------------------------------------------
 16[S]deleteAllProjectsSpec	 		|Get all non-deleted projects
 								Delete projects by Id Project
 --------------------------------------------------------------------------------------------------
-17_projectCRUDSpec 					|CRUD to project
+17_projectCRUDSpec 				|CRUD to project
 								Create a new project
 								Read all projects
 								Update the project
 								Delete the project by Id
 --------------------------------------------------------------------------------------------------
-18[Sc]increasedIdProjectSpec 		| the id project is increased by one 
+18[Sc]increasedIdProjectSpec 			| the id project is increased by one 
 								Given the list of the projects
 								Get the last id project
 								And I create a new project
@@ -119,7 +119,7 @@ Note: Todo.ly account email: noemi4j7g@gmail.com
 			Authentication
 22[Sa]isAuthenticatedSpec 			|Returns whether the current request is Authenticated.
 --------------------------------------------------------------------------------------------------
-23[S]getTokenSpec  					|Get Token
+23[S]getTokenSpec  				|Get Token
 --------------------------------------------------------------------------------------------------
 24[S]deleteTokenSpec  				|Deletes the Token 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -131,7 +131,7 @@ Note: Todo.ly account email: noemi4j7g@gmail.com
 								Given I have the filter list
 								Then I should get item list filtering  each  id filter
 --------------------------------------------------------------------------------------------------			  
-27[Sc]setDoneItemsFilterSpec		| Set Done Items the filter that list more one item	
+27[Sc]setDoneItemsFilterSpec			| Set Done Items the filter that list more one item	
 								Given I have the filter list
 								Set Done Items the filter that list 	
 								then I should get all items done
