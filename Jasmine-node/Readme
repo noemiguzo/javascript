@@ -14,19 +14,21 @@ Note: Todo.ly account email: noemi4j7g@gmail.com
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 						USER
 --------------------------------------------------------------------------------------------------
-01[S] userSpec  					|create a new user|
+01[S] userSpec  					|create a new user
 --------------------------------------------------------------------------------------------------
 02[Sa]Get the currentUserSpec  		|Get the currentUserSpec'
 --------------------------------------------------------------------------------------------------		
-03[Sc] listDefaultProjectUserSpec   |the default id project of the current user is least to the new id project
+03[Sc] listDefaultProjectUserSpec   
+						|the default id project of the current user is least to the new id project
 								Given a user is authentication
 								And I get the default id project
 								And I create a new project
 								Then the default id project is less to new  id project
 --------------------------------------------------------------------------------------------------						
-04[N] invalidEmailSpec		 		|Verify that an error message is displayed when trying to add an user with invalid email Address
+04[N] invalidEmailSpec		 		
+						|Verify that an error message is displayed when trying to add an user with invalid email Address
 --------------------------------------------------------------------------------------------------
-05[N] emptyEmailSpec			 	|Verify that an error message is displayed when trying to add an user with empty data as parameter
+05[N] emptyEmailSpec	|Verify that an error message is displayed when trying to add an user with empty data as parameter
 --------------------------------------------------------------------------------------------------
 06[Sa]updateUserSpec				|Update full name user
 --------------------------------------------------------------------------------------------------
@@ -40,13 +42,15 @@ Note: Todo.ly account email: noemi4j7g@gmail.com
 								And I create 2 items for that project
 								Then those items belong to the created project
 --------------------------------------------------------------------------------------------------
-08[S]deleteItemProjectSpec    		|After delete a items of a project the number of items is decreased
+08[S]deleteItemProjectSpec    		
+							|After delete a items of a project the number of items is decreased
 								Given I have more that one project 
 								Select the a project with more than one items
 								And I delete a item
 								Then the number of items should be decreased
 --------------------------------------------------------------------------------------------------
-09[Sc]itemsSelectedProjectSpec 		|The number of items should be increased when a new item is added to the first project 
+09[Sc]itemsSelectedProjectSpec 		
+			|The number of items should be increased when a new item is added to the first project 
 								Given I have more that one project 
 								Select the first project
 								And I create items for that project
@@ -69,7 +73,7 @@ Note: Todo.ly account email: noemi4j7g@gmail.com
 								Update the already created Item by Id within today filter
 								Delete item by ID
 --------------------------------------------------------------------------------------------------
-12[N]invalidProjectIdSpec 			| Verify that is not possible add a item with invalid project id
+12[N]invalidProjectIdSpec 		| Verify that is not possible add a item with invalid project id
 --------------------------------------------------------------------------------------------------
 13[Sc]setDoneItemsSpec	 			|Set Done all items of any project
 								Given  I have at least one project created in my account 
@@ -106,9 +110,9 @@ Note: Todo.ly account email: noemi4j7g@gmail.com
 								Get project by Id
 								Then the first project should be displayed
 --------------------------------------------------------------------------------------------------	
-20[N]invalidParentIDSpec  			|Verify that is not possible to add a new project with invalid ParentId
+20[N]invalidParentIDSpec  	|Verify that is not possible to add a new project with invalid ParentId
 --------------------------------------------------------------------------------------------------
-21[N]emptyNameSpec   				|Verify that it is not possible to add project with empty name
+21[N]emptyNameSpec   		|Verify that it is not possible to add project with empty name
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::	
 			Authentication
