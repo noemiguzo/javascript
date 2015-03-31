@@ -1,8 +1,8 @@
 
-/**
- * Test case that allows Verify create a project  with Token Authentication
- * @type {exports}
- */
+/*
+* create a project  with Token Authentication
+*
+*/
 
 var frisby = require('frisby');
 

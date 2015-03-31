@@ -9,13 +9,12 @@ frisby.globalSetup({
 	}
 });
 /*
-
-Set Done all items of any project
-	Given  I have at least one project created in my account 
-	Select a project randomly
-	And I create  items for that project
-	And set Dome to all Items
-	Then all Items of the project should be set done
+* Set Done all items of any project
+*	Given  I have at least one project created in my account 
+*	Select a project randomly
+*	And I create  items for that project
+*	And set Dome to all Items
+*	Then all Items of the project should be set done
 */
 var createProject = function(){
 	var project={  

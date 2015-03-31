@@ -36,7 +36,7 @@ var createProject = function(projectName){
     
 };
 
-/**
+/*
 *Function to create item within  today filter
 */
 var createItemWithinTodayFilter = function(itemName){
@@ -59,8 +59,11 @@ var createItemWithinTodayFilter = function(itemName){
 
 
 
-/**
-* CRUD Test case3: create/read/update/delete an item within the today filter
+/*
+* Create Item 
+*			GET Item  by ID
+*			Update the already created Item by Id within today filter
+*			Delete item by ID
 */
 
 var updateItemValues = {
