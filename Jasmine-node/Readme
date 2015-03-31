@@ -26,9 +26,10 @@ Note: Todo.ly account email: noemi4j7g@gmail.com
 								Then the default id project is less to new  id project
 --------------------------------------------------------------------------------------------------						
 04[N] invalidEmailSpec		 		
-						|Verify that an error message is displayed when trying to add an user with invalid email Address
+|Verify that an error message is displayed when trying to add an user with invalid email Address
 --------------------------------------------------------------------------------------------------
-05[N] emptyEmailSpec	|Verify that an error message is displayed when trying to add an user with empty data as parameter
+05[N] emptyEmailSpec	
+|Verify that an error message is displayed when trying to add an user with empty data as parameter
 --------------------------------------------------------------------------------------------------
 06[Sa]updateUserSpec				|Update full name user
 --------------------------------------------------------------------------------------------------
